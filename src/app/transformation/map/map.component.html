@@ -1,0 +1,55 @@
+<header>
+  <h1>MAP Operator DEMO</h1>
+</header>
+
+<mat-accordion>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>DEMO 01</mat-panel-title>
+      <mat-panel-description>Add 10 to each number</mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <mat-card>
+      <mat-card-header> <mat-card-title>Before MAP operator</mat-card-title> </mat-card-header>
+      <mat-card-content>
+        <mat-list role="list">
+          <mat-list-item role="listitem" *ngFor="let item of originalItemsDemo1">{{ item }}</mat-list-item>
+        </mat-list>
+      </mat-card-content>
+    </mat-card>
+    <br />
+    <mat-card>
+      <mat-card-header> <mat-card-title>After MAP operator</mat-card-title> </mat-card-header>
+      <mat-card-content>
+        <mat-list role="list">
+          <mat-list-item role="listitem" *ngFor="let item of modifiedItemsDemo1">{{ item }}</mat-list-item>
+        </mat-list>
+      </mat-card-content>
+    </mat-card>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>DEMO 02</mat-panel-title>
+      <mat-panel-description>Map to single property</mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <mat-card>
+      <mat-card-header> <mat-card-title>Before MAP operator</mat-card-title> </mat-card-header>
+      <mat-card-content>
+        <mat-list role="list">
+          <mat-list-item role="listitem" *ngFor="let item of originalItemsDemo2">{{ item | json }}</mat-list-item>
+        </mat-list>
+      </mat-card-content>
+    </mat-card>
+    <br />
+    <mat-card>
+      <mat-card-header> <mat-card-title>After MAP operator</mat-card-title> </mat-card-header>
+      <mat-card-content>
+        <mat-list role="list">
+          <mat-list-item role="listitem" *ngFor="let item of modifiedItemsDemo2">{{ item | json }}</mat-list-item>
+        </mat-list>
+      </mat-card-content>
+    </mat-card>
+  </mat-expansion-panel>
+</mat-accordion>
