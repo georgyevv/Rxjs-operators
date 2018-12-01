@@ -8,23 +8,25 @@ import { map } from "rxjs/operators";
   styleUrls: ["./map.component.css"]
 })
 export class MapComponent implements OnInit {
+  //#region DEMO 1
   public originalItemsDemo1 = [1, 2, 3, 4, 5];
   public modifiedItemsDemo1 = [];
+  //#endregion
 
+  //#region DEMO 2
   public originalItemsDemo2 = [{ name: "Joe", age: 30 }, { name: "Frank", age: 20 }, { name: "Ryan", age: 50 }];
   public modifiedItemsDemo2 = [];
+  //#endregion
 
   ngOnInit() {
-    // DEMO 1
+    //#region DEMO 1
     const observableDemo1 = from(this.originalItemsDemo1);
-    observableDemo1
-      .pipe(map(item => item + 10))
-      .subscribe(item => this.modifiedItemsDemo1.push(item));
+    observableDemo1.pipe(map(item => item + 10)).subscribe(item => this.modifiedItemsDemo1.push(item));
+    //#endregion
 
-    // DEMO 2
+    //#region DEMO 2
     const observableDemo2 = from(this.originalItemsDemo2);
-    observableDemo2
-      .pipe(map(({ name }) => name))
-      .subscribe(item => this.modifiedItemsDemo2.push(item));
+    observableDemo2.pipe(map(({ name }) => name)).subscribe(item => this.modifiedItemsDemo2.push(item));
+    //#endregion
   }
 }
